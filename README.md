@@ -7,6 +7,7 @@ and exports only `fetch` calls to make requests.
 
 ```bash
 npm install shikimori-graphql-api-lightweight-client
+npm install -D graphql # for types, if needed
 ```
 
 ## Usage

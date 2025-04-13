@@ -1,6 +1,6 @@
 {
   "name": "shikimori-graphql-api-lightweight-client",
-  "version": "0.0.0-alpha.1",
+  "version": "1.0.2",
   "description": "Lightweight Shikimori GraphQL API client. Exports only minimal Fetch call. Fully compatible with AWS LLRT.",
   "main": "src/index.ts",
   "type": "module",
