@@ -1,9 +1,7 @@
 ﻿{
   "compilerOptions": {
     "rootDir": "./src",
-    "outDir": "./dist",
     "module": "ESNext",
-    "declaration": true,
     "lib": [
       "ESNext"
     ],
@@ -28,6 +26,6 @@
   ],
   "exclude": [
     "node_modules",
-    "**/*.spec.ts",
+    "tsconfig.json"
   ]
 }

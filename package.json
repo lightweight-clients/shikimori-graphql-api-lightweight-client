@@ -1,26 +1,7 @@
 {
   "name": "shikimori-graphql-api-lightweight-client",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Lightweight Shikimori GraphQL API client. Exports only minimal Fetch call. Fully compatible with AWS LLRT.",
-  "source": "src/index.ts",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "type": "module",
-  "scripts": {
-    "lint": "eslint .",
-    "test": "node ./node_modules/jest/bin/jest.js --runInBand",
-    "build": "tsc",
-    "prepublish": "npm run lint && npm run test && npm run build"
-  },
-  "files": [
-    "dist/",
-    "README.md",
-    "LICENSE"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HRAshton/shikimori-graphql-api-lightweight-client"
-  },
   "keywords": [
     "api",
     "async",
@@ -31,15 +12,25 @@
     "no-deps",
     "shikimori"
   ],
-  "author": {
-    "name": "HRAshton",
-    "url": "https://github.com/HRAshton"
+  "main": "src/index.ts",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "node ./node_modules/jest/bin/jest.js --runInBand"
   },
+  "type": "module",
+  "author": "HRAshton",
   "license": "MIT",
+  "homepage": "https://github.com/HRAshton/shikimori-graphql-api-lightweight-client",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HRAshton/shikimori-graphql-api-lightweight-client"
+  },
   "bugs": {
     "url": "https://github.com/HRAshton/shikimori-graphql-api-lightweight-client/issues"
   },
-  "homepage": "https://github.com/HRAshton/shikimori-graphql-api-lightweight-client",
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.24.0",
