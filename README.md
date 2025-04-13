@@ -1,5 +1,9 @@
 # Shikimori GraphQL API Lightweight Client
 
+![Language Shield](https://img.shields.io/badge/language-typescript-blue?style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/tutkli/jikan-ts?style=for-the-badge&color=blueviolet)
+![Code Style Shield](https://img.shields.io/badge/code%20style-eslint:recommended-00A5F0?style=for-the-badge&logo=eslint)
+
 This is typed lightweight client for GraphQL. It contains only methods and types
 and exports only `fetch` calls to make requests.
 
