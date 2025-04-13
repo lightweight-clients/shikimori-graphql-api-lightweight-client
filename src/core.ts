@@ -39,8 +39,9 @@ export let internal_client_fetch = async <
         body: JSON.stringify({ query }),
     });
 
-    // @eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (await response.json() as any)['data'][datatype];
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    return (await response.json())['data'][datatype];
 };
 
 /*
