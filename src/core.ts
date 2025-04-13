@@ -1,7 +1,7 @@
 import { QueryResultDescription } from './types-client';
 
 const BASE_URL: string = 'https://shikimori.one/api/graphql';
-const headers: Record<string, string | ReadonlyArray<string>> = { 'Content-Type': 'application/json' };
+const headers: HeadersInit | undefined = { 'Content-Type': 'application/json' };
 
 const getResultFields = <TResultDescription>(resultDescription: QueryResultDescription<TResultDescription>): string => {
     const resultParts = [];
@@ -39,8 +39,6 @@ export let internal_client_fetch = async <
         body: JSON.stringify({ query }),
     });
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     return (await response.json())['data'][datatype];
 };
 

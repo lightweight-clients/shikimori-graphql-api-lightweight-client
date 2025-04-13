@@ -3,7 +3,9 @@
     "rootDir": "./src",
     "module": "ESNext",
     "lib": [
-      "ESNext"
+      "ESNext",
+      "webworker",
+      "DOM"
     ],
     "alwaysStrict": true,
     "forceConsistentCasingInFileNames": true,
@@ -19,7 +21,8 @@
     "strictPropertyInitialization": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "noEmit": true
   },
   "include": [
     "src/**/*"
