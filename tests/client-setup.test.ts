@@ -1,4 +1,5 @@
-﻿import { animes, client_setAuthToken, client_setCustomFetch, client_setUserAgent } from '../src';
+﻿import { describe, expect, test, beforeEach, vi } from 'vitest';
+import { animes, client_setAuthToken, client_setCustomFetch, client_setUserAgent } from '../src';
 
 describe('client setup tests', () => {
     const EXPECTED_URL = 'https://shikimori.one/api/graphql';
@@ -6,14 +7,14 @@ describe('client setup tests', () => {
     const TEST_USER_AGENT = 'test-user-agent';
     const TEST_AUTH_TOKEN = 'test-token';
 
-    const fetchMock = global.fetch = jest.fn(url => {
+    const fetchMock = global.fetch = vi.fn(url => {
         console.log('fetch called', String(url));
         return Promise.resolve({
             json: () => Promise.resolve({ data: { animes: [] } }),
         });
-    }) as jest.Mock;
+    }) as unknown as typeof global.fetch;
 
-    beforeEach(() => jest.clearAllMocks());
+    beforeEach(() => vi.clearAllMocks());
 
     test('should build correct plain query', async () => {
         await animes({ ids: TEST_ANIME_ID }, { malId: 1 });
@@ -76,7 +77,7 @@ describe('client setup tests', () => {
     });
 
     test('should set custom fetch function', async () => {
-        const customFetch = jest.fn();
+        const customFetch = vi.fn();
         client_setCustomFetch(customFetch);
 
         await animes({ ids: TEST_ANIME_ID }, { malId: 1 });
