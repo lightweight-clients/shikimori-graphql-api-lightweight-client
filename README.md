@@ -11,7 +11,7 @@ and exports only `fetch` calls to make requests.
 ## Installation
 
 ```bash
-npm install shikimori-graphql-api-lightweight-client
+npm install @lightweight-clients/shikimori-graphql-api-lightweight-client
 ```
 
 ## Usage
