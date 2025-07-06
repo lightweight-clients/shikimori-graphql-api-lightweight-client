@@ -1,54 +1,57 @@
 {
-  "name": "shikimori-graphql-api-lightweight-client",
-  "version": "1.0.2",
+  "name": "@lightweight-clients/shikimori-graphql-api-lightweight-client",
+  "version": "4.0.1",
   "description": "Lightweight Shikimori GraphQL API client. Exports only minimal Fetch call. Fully compatible with AWS LLRT.",
-  "main": "src/index.ts",
-  "type": "module",
-  "scripts": {
-    "ts": "tsc",
-    "lint": "eslint .",
-    "test": "node ./node_modules/jest/bin/jest.js --runInBand",
-    "prepublish": "npm run lint && npm run ts && npm run test"
-  },
-  "files": [
-    "src/",
-    "README.md",
-    "LICENSE"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HRAshton/shikimori-graphql-api-lightweight-client"
-  },
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "keywords": [
+    "anime",
     "api",
     "async",
+    "esm",
     "fetch",
     "graphql",
     "lightweight",
     "llrt",
+    "manga",
     "no-deps",
-    "shikimori"
+    "shikimori",
+    "tree-shakeable"
   ],
-  "author": {
-    "name": "HRAshton",
-    "url": "https://github.com/HRAshton"
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "depcheck": "depcheck",
+    "lint": "eslint .",
+    "test": "vitest --run",
+    "build": "tsc",
+    "build-and-test": "npm run depcheck && npm run lint && npm run build --noEmit && npm run test",
+    "prepack": "npm run build"
   },
+  "type": "module",
+  "author": "HRAshton",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/HRAshton/shikimori-graphql-api-lightweight-client/issues"
+  "homepage": "https://github.com/lightweight-clients/shikimori-graphql-api-lightweight-client",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lightweight-clients/shikimori-graphql-api-lightweight-client"
   },
-  "homepage": "https://github.com/HRAshton/shikimori-graphql-api-lightweight-client",
+  "bugs": {
+    "url": "https://github.com/lightweight-clients/shikimori-graphql-api-lightweight-client/issues"
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.24.0",
-    "@types/jest": "^29.5.14",
+    "@eslint/js": "^9.26.0",
     "@typescript-eslint/eslint-plugin": "^8.29.1",
     "@typescript-eslint/parser": "^8.29.1",
+    "depcheck": "^1.4.7",
     "eslint": "^9.24.0",
-    "graphql": "^16.10.0",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.3.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
-  }
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  },
+  "schema_version": ""
 }
