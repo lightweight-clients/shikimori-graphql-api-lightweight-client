@@ -1,13 +1,17 @@
 # Shikimori GraphQL API Lightweight Client
 
-This is typed lightweight client for GraphQL. It contains only methods and types
+[![NPM Version](https://img.shields.io/npm/v/shikimori-graphql-api-lightweight-client)](https://www.npmjs.com/package/@lightweight-clients/shikimori-graphql-api-lightweight-client)
+[![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Flightweight-clients%2Fshikimori-graphql-api-lightweight-client%2Factions%2Fworkflows%2Fcreate-new-version-when-it-is-released.yml%2Fruns%3Fstatus%3Dcompleted%26per_page%3D1&query=%24.workflow_runs%5B0%5D.run_started_at&style=flat&label=Last%20API%20version%20check)](https://github.com/lightweight-clients/shikimori-graphql-api-lightweight-client/actions/workflows/create-new-version-when-it-is-released.yml)
+![NPM Downloads](https://img.shields.io/npm/dm/@lightweight-clients/shikimori-graphql-api-lightweight-client)
+![GitHub License](https://img.shields.io/github/license/lightweight-clients/shikimori-graphql-api-lightweight-client)
+
+This is a typed lightweight client for Shikimori GraphQL API. It contains only methods and types
 and exports only `fetch` calls to make requests.
 
 ## Installation
 
 ```bash
-npm install shikimori-graphql-api-lightweight-client
-npm install -D graphql # for types, if needed
+npm install @lightweight-clients/shikimori-graphql-api-lightweight-client
 ```
 
 ## Usage
@@ -66,6 +70,23 @@ console.log(result);
 - Fully compatible with AWS LLRT.
 - Fully typed API.
 
+## Versioning
+
+GraphQL API is not versioned, so the client is updated to the latest API version
+when a new version of the client is released.
+
+- Major version updates of the client may include breaking changes in either GraphQL API or the client itself.
+- Minor version updates of the client may include new features or improvements, but should not break existing
+  functionality. Minor version can also include changes in the GraphQL API that do not break existing functionality.
+- Patch version updates of the client are for bug fixes and should not introduce any new features or breaking changes.
+
+## Schema
+
+The schema for the Shikimori GraphQL API is available in the
+[lightweight-clients/schemas](https://github.com/lightweight-clients/schemas) repository.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+Types are generated from Shikimori GraphQL API documentation
+by [graphql-codegen](https://www.graphql-code-generator.com/).

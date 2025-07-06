@@ -1,34 +1,35 @@
 ﻿{
   "compilerOptions": {
-    "rootDir": "./src",
+    "target": "ES2022",
     "module": "ESNext",
     "lib": [
-      "ESNext",
-      "webworker",
-      "DOM"
+      "ES2022",
+      "dom"
     ],
+
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    "declaration": true,
+    "sourceMap": true,
     "alwaysStrict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "preserveConstEnums": true,
     "strict": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-    "esModuleInterop": true,
-    "noEmit": true
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
     "node_modules",
-    "**/*.spec.ts",
+    "dist"
   ]
 }

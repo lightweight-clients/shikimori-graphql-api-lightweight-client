@@ -1,4 +1,4 @@
-﻿export * from './core';
-export * from './types-api';
-export * from './types-client';
+﻿export type * from './types-api';
+export type * from './types-client';
 export * from './client';
+export * from './core';
