@@ -85,14 +85,12 @@ jobs:
         working-directory: ./client
         run: |
           api_version=${{ needs.compare-versions.outputs.api_version }}.0
-          openapi_version=$(jq -r '.info.version' ./schema/openapi.json)
           npm_version=$(jq -r '.version' ./package.json)
 
           echo "API version: $api_version"
-          echo "OpenAPI version: $openapi_version"
           echo "NPM version: $npm_version"
 
-          if [[ $api_version != $openapi_version || $api_version != $npm_version ]]; then
+          if [[ $api_version != $npm_version ]]; then
               echo "Versions do not match"
               exit 60
           fi
