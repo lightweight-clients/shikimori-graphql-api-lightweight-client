@@ -5,15 +5,11 @@ import type { QueryResultDescription } from './types-client';
 const BASE_URL: string = 'https://shikimori.one/api/graphql';
 const headers: HeadersInit | undefined = { 'Content-Type': 'application/json' };
 
-const getResultFields = <TResultDescription>(
-  resultDescription: QueryResultDescription<TResultDescription>,
-): string => {
+const getResultFields = <TResultDescription>(resultDescription: QueryResultDescription<TResultDescription>): string => {
   const resultParts = [];
   for (const [key, value] of Object.entries(resultDescription)) {
     if (typeof value === 'object') {
-      const nestedResult = getResultFields(
-        value as QueryResultDescription<TResultDescription>,
-      );
+      const nestedResult = getResultFields(value as QueryResultDescription<TResultDescription>);
       resultParts.push(`${key} { ${nestedResult} }`);
     } else {
       resultParts.push(key);
@@ -68,8 +64,6 @@ export const client_setAuthToken = (token: string): void => {
 /*
  * Sets a custom fetch function for the client.
  */
-export const client_setCustomFetch = (
-  customFetch: typeof internal_client_fetch,
-): void => {
+export const client_setCustomFetch = (customFetch: typeof internal_client_fetch): void => {
   internal_client_fetch = customFetch;
 };
