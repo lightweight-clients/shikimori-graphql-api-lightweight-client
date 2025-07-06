@@ -14,87 +14,65 @@ export const animes = (
   args: apiTypes.QueryAnimesArgs,
   resultDescription: QueryResultDescription<apiTypes.Anime[]>,
 ): Promise<apiTypes.Anime[]> =>
-  internal_client_fetch<
-    apiTypes.QueryAnimesArgs,
-    apiTypes.Anime,
-    apiTypes.Anime[]
-  >('animes', args, resultDescription);
+  internal_client_fetch<apiTypes.QueryAnimesArgs, apiTypes.Anime, apiTypes.Anime[]>('animes', args, resultDescription);
 
 export const characters = (
   args: apiTypes.QueryCharactersArgs,
   resultDescription: QueryResultDescription<apiTypes.Character[]>,
 ): Promise<apiTypes.Character[]> =>
-  internal_client_fetch<
-    apiTypes.QueryCharactersArgs,
-    apiTypes.Character,
-    apiTypes.Character[]
-  >('characters', args, resultDescription);
+  internal_client_fetch<apiTypes.QueryCharactersArgs, apiTypes.Character, apiTypes.Character[]>(
+    'characters',
+    args,
+    resultDescription,
+  );
 
 export const contests = (
   args: apiTypes.QueryContestsArgs,
   resultDescription: QueryResultDescription<apiTypes.Contest[]>,
 ): Promise<apiTypes.Contest[]> =>
-  internal_client_fetch<
-    apiTypes.QueryContestsArgs,
-    apiTypes.Contest,
-    apiTypes.Contest[]
-  >('contests', args, resultDescription);
-
-export const currentUser = (
-  resultDescription: QueryResultDescription<apiTypes.User>,
-): Promise<apiTypes.User> =>
-  internal_client_fetch<Record<never, never>, apiTypes.User, apiTypes.User>(
-    'currentUser',
-    {},
+  internal_client_fetch<apiTypes.QueryContestsArgs, apiTypes.Contest, apiTypes.Contest[]>(
+    'contests',
+    args,
     resultDescription,
   );
+
+export const currentUser = (resultDescription: QueryResultDescription<apiTypes.User>): Promise<apiTypes.User> =>
+  internal_client_fetch<Record<never, never>, apiTypes.User, apiTypes.User>('currentUser', {}, resultDescription);
 
 export const genres = (
   args: apiTypes.QueryGenresArgs,
   resultDescription: QueryResultDescription<apiTypes.Genre[]>,
 ): Promise<apiTypes.Genre[]> =>
-  internal_client_fetch<
-    apiTypes.QueryGenresArgs,
-    apiTypes.Genre,
-    apiTypes.Genre[]
-  >('genres', args, resultDescription);
+  internal_client_fetch<apiTypes.QueryGenresArgs, apiTypes.Genre, apiTypes.Genre[]>('genres', args, resultDescription);
 
 export const mangas = (
   args: apiTypes.QueryMangasArgs,
   resultDescription: QueryResultDescription<apiTypes.Manga[]>,
 ): Promise<apiTypes.Manga[]> =>
-  internal_client_fetch<
-    apiTypes.QueryMangasArgs,
-    apiTypes.Manga,
-    apiTypes.Manga[]
-  >('mangas', args, resultDescription);
+  internal_client_fetch<apiTypes.QueryMangasArgs, apiTypes.Manga, apiTypes.Manga[]>('mangas', args, resultDescription);
 
 export const people = (
   args: apiTypes.QueryPeopleArgs,
   resultDescription: QueryResultDescription<apiTypes.Person[]>,
 ): Promise<apiTypes.Person[]> =>
-  internal_client_fetch<
-    apiTypes.QueryPeopleArgs,
-    apiTypes.Person,
-    apiTypes.Person[]
-  >('people', args, resultDescription);
+  internal_client_fetch<apiTypes.QueryPeopleArgs, apiTypes.Person, apiTypes.Person[]>(
+    'people',
+    args,
+    resultDescription,
+  );
 
 export const userRates = (
   args: apiTypes.QueryUserRatesArgs,
   resultDescription: QueryResultDescription<apiTypes.UserRate[]>,
 ): Promise<apiTypes.UserRate[]> =>
-  internal_client_fetch<
-    apiTypes.QueryUserRatesArgs,
-    apiTypes.UserRate,
-    apiTypes.UserRate[]
-  >('userRates', args, resultDescription);
+  internal_client_fetch<apiTypes.QueryUserRatesArgs, apiTypes.UserRate, apiTypes.UserRate[]>(
+    'userRates',
+    args,
+    resultDescription,
+  );
 
 export const users = (
   args: apiTypes.QueryUsersArgs,
   resultDescription: QueryResultDescription<apiTypes.User[]>,
 ): Promise<apiTypes.User[]> =>
-  internal_client_fetch<
-    apiTypes.QueryUsersArgs,
-    apiTypes.User,
-    apiTypes.User[]
-  >('users', args, resultDescription);
+  internal_client_fetch<apiTypes.QueryUsersArgs, apiTypes.User, apiTypes.User[]>('users', args, resultDescription);
