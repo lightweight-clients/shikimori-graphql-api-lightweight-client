@@ -6,6 +6,16 @@ and no migration is needed.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.1.1
+
+No changes in code, only package metadata and build process updated.
+
+### Changed
+
+- Package author changed from "@lightweight-clients" to "lightweight-clients".
+- Updated dependencies.
+- Reworked build process.
+
 ## 1.1.0
 
 The package has been renamed from shikimori-graphql-api-lightweight-client to
