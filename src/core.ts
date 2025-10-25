@@ -1,6 +1,6 @@
 // noinspection JSUnusedGlobalSymbols
 
-import type { QueryResultDescription } from './types-client';
+import type { QueryResultDescription } from './types-client.js';
 
 const BASE_URL: string = 'https://shikimori.one/api/graphql';
 const headers: HeadersInit | undefined = { 'Content-Type': 'application/json' };

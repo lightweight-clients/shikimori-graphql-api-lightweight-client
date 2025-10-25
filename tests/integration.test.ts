@@ -8,6 +8,7 @@ describe('requests integration tests', () => {
     const baseFetch = global.fetch;
     global.fetch = vi.fn((...args) => {
       console.log('fetch called with URL:', JSON.stringify(args));
+      // @ts-expect-error - spread args are fine here
       return baseFetch(...args);
     });
 
