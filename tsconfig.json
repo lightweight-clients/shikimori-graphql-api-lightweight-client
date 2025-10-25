@@ -1,15 +1,13 @@
-﻿{
+{
   "compilerOptions": {
     "target": "ES2022",
-    "module": "ESNext",
+    "module": "NodeNext",
     "lib": [
       "ES2022",
-      "dom"
+      "DOM"
     ],
-
     "rootDir": "./src",
     "outDir": "./dist",
-
     "declaration": true,
     "sourceMap": true,
     "alwaysStrict": true,
@@ -18,7 +16,7 @@
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,

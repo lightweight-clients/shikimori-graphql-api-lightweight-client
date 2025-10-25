@@ -6,9 +6,9 @@
  * Configure the client via 'core.ts'.
  */
 
-import type * as apiTypes from './types-api';
-import type { QueryResultDescription } from './types-client';
-import { internal_client_fetch } from './core';
+import type * as apiTypes from './types-api.js';
+import type { QueryResultDescription } from './types-client.js';
+import { internal_client_fetch } from './core.js';
 
 export const animes = (
   args: apiTypes.QueryAnimesArgs,
