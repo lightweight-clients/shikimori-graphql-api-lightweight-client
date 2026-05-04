@@ -6,6 +6,10 @@ and no migration is needed.
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.2.0
+
+Use shikimori.io as the default API endpoint.
+
 ## 1.1.1
 
 No changes in code, only package metadata and build process updated.
