@@ -1,4 +1,4 @@
-﻿/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 
 import { describe, expect, it, beforeAll, vi } from 'vitest';
 import { animes, characters, client_setUserAgent, mangas, people } from '../src';
@@ -58,8 +58,8 @@ describe('requests integration tests', () => {
       expect(character.poster).toBeDefined();
       expect(Object.keys(character.poster!).length).toBe(2);
       expect(character.poster!.id).not.toBeDefined();
-      expect(character.poster!.originalUrl).toMatch(/https:\/\/shikimori.one\/uploads.+/);
-      expect(character.poster!.previewUrl).toMatch(/https:\/\/shikimori.one\/uploads.+/);
+      expect(character.poster!.originalUrl).toMatch(/https:\/\/shikimori.io\/uploads.+/);
+      expect(character.poster!.previewUrl).toMatch(/https:\/\/shikimori.io\/uploads.+/);
     }
   });
 

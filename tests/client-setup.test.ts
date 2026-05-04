@@ -2,7 +2,7 @@
 import { animes, client_setAuthToken, client_setCustomFetch, client_setUserAgent } from '../src';
 
 describe('client setup tests', () => {
-  const EXPECTED_URL = 'https://shikimori.one/api/graphql';
+  const EXPECTED_URL = 'https://shikimori.io/api/graphql';
   const TEST_ANIME_ID = '1';
   const TEST_USER_AGENT = 'test-user-agent';
   const TEST_AUTH_TOKEN = 'test-token';
