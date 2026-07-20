@@ -1,5 +1,10 @@
-﻿import { describe, expect, test, beforeEach, vi } from 'vitest';
-import { animes, client_setAuthToken, client_setCustomFetch, client_setUserAgent } from '../src';
+﻿import { beforeEach, describe, expect, test, vi } from 'vitest';
+import {
+  animes,
+  client_setAuthToken,
+  client_setCustomFetch,
+  client_setUserAgent,
+} from '../src';
 
 describe('client setup tests', () => {
   const EXPECTED_URL = 'https://shikimori.io/api/graphql';
@@ -7,37 +12,33 @@ describe('client setup tests', () => {
   const TEST_USER_AGENT = 'test-user-agent';
   const TEST_AUTH_TOKEN = 'test-token';
 
-  const fetchMock = global.fetch = vi.fn(url => {
-    console.log('fetch called', String(url));
-    return Promise.resolve({
+  const fetchMock = vi.fn(() =>
+    Promise.resolve({
       json: () => Promise.resolve({ data: { animes: [] } }),
-    });
-  }) as unknown as typeof global.fetch;
+    }),
+  ) as unknown as typeof global.fetch;
+  global.fetch = fetchMock;
 
   beforeEach(() => vi.clearAllMocks());
 
   test('should build correct plain query', async () => {
     await animes({ ids: TEST_ANIME_ID }, { malId: 1 });
 
-    expect(fetchMock).toHaveBeenCalledWith(
-      EXPECTED_URL,
-      {
-        'method': 'POST',
-        'headers': { 'Content-Type': 'application/json' },
-        'body': '{"query":"{ animes(ids: \\"1\\") { malId } }"}',
-      });
+    expect(fetchMock).toHaveBeenCalledWith(EXPECTED_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: '{"query":"{ animes(ids: \\"1\\") { malId } }"}',
+    });
   });
 
   test('should build correct nested query', async () => {
     await animes({ ids: TEST_ANIME_ID }, { malId: 1, genres: { name: 1 } });
 
-    expect(fetchMock).toHaveBeenCalledWith(
-      EXPECTED_URL,
-      {
-        'method': 'POST',
-        'headers': { 'Content-Type': 'application/json' },
-        'body': '{"query":"{ animes(ids: \\"1\\") { malId genres { name } } }"}',
-      });
+    expect(fetchMock).toHaveBeenCalledWith(EXPECTED_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: '{"query":"{ animes(ids: \\"1\\") { malId genres { name } } }"}',
+    });
   });
 
   test('should set User-Agent header', async () => {
@@ -45,16 +46,14 @@ describe('client setup tests', () => {
 
     await animes({ ids: TEST_ANIME_ID }, { malId: 1 });
 
-    expect(fetchMock).toHaveBeenCalledWith(
-      EXPECTED_URL,
-      {
-        'method': 'POST',
-        'headers': {
-          'Content-Type': 'application/json',
-          'User-Agent': TEST_USER_AGENT,
-        },
-        'body': '{"query":"{ animes(ids: \\"1\\") { malId } }"}',
-      });
+    expect(fetchMock).toHaveBeenCalledWith(EXPECTED_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'User-Agent': TEST_USER_AGENT,
+      },
+      body: '{"query":"{ animes(ids: \\"1\\") { malId } }"}',
+    });
   });
 
   test('should set Authorization header', async () => {
@@ -63,17 +62,15 @@ describe('client setup tests', () => {
 
     await animes({ ids: TEST_ANIME_ID }, { malId: 1 });
 
-    expect(fetchMock).toHaveBeenCalledWith(
-      EXPECTED_URL,
-      {
-        'method': 'POST',
-        'headers': {
-          'Content-Type': 'application/json',
-          'User-Agent': TEST_USER_AGENT,
-          'Authorization': `Bearer ${TEST_AUTH_TOKEN}`,
-        },
-        'body': '{"query":"{ animes(ids: \\"1\\") { malId } }"}',
-      });
+    expect(fetchMock).toHaveBeenCalledWith(EXPECTED_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'User-Agent': TEST_USER_AGENT,
+        Authorization: `Bearer ${TEST_AUTH_TOKEN}`,
+      },
+      body: '{"query":"{ animes(ids: \\"1\\") { malId } }"}',
+    });
   });
 
   test('should set custom fetch function', async () => {
@@ -82,6 +79,10 @@ describe('client setup tests', () => {
 
     await animes({ ids: TEST_ANIME_ID }, { malId: 1 });
 
-    expect(customFetch).toHaveBeenCalledWith('animes', { ids: TEST_ANIME_ID }, { malId: 1 });
+    expect(customFetch).toHaveBeenCalledWith(
+      'animes',
+      { ids: TEST_ANIME_ID },
+      { malId: 1 },
+    );
   });
 });

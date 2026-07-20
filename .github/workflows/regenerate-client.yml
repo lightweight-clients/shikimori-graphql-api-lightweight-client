@@ -81,6 +81,12 @@ jobs:
           jq '.schema_version = "'"${{ needs.compare-versions.outputs.schema_version }}"'"' package.json \
             > package.json.tmp && mv package.json.tmp package.json
 
+      - name: Format generated client
+        working-directory: ./client
+        run: |
+          npm ci
+          npm run lint:fix
+
       - name: Verify version
         working-directory: ./client
         run: |
@@ -104,8 +110,7 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         with:
           path: ./client
-          commit-message: "Support API v${{ needs.compare-versions.outputs.api_version }}"
-          title: "Support API v${{ needs.compare-versions.outputs.api_version }}"
+          commit-message: "feat: Support API v${{ needs.compare-versions.outputs.api_version }}"
           body: "This PR updates the client to version ${{ needs.compare-versions.outputs.api_version }}."
           branch: "new_version/${{ needs.compare-versions.outputs.api_version }}"
           base: master
