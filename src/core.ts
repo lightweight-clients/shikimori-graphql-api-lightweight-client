@@ -1,11 +1,9 @@
 // noinspection JSUnusedGlobalSymbols
 
-import type { QueryResultDescription } from './types-client.js';
+import type { QueryResultDescription } from './types-client';
 
 const BASE_URL: string = 'https://shikimori.io/api/graphql';
-const headers: Record<string, string> = {
-  'Content-Type': 'application/json',
-};
+const headers: HeadersInit | undefined = { 'Content-Type': 'application/json' };
 
 const getResultFields = <TResultDescription>(
   resultDescription: QueryResultDescription<TResultDescription>,
@@ -49,7 +47,7 @@ export let internal_client_fetch = async <
     body: JSON.stringify({ query }),
   });
 
-  return (await response.json()).data[datatype];
+  return (await response.json())['data'][datatype];
 };
 
 /*
@@ -64,7 +62,7 @@ export const client_setUserAgent = (userAgent: string): void => {
  * Sets the 'Authorization' header for the client.
  */
 export const client_setAuthToken = (token: string): void => {
-  headers.Authorization = `Bearer ${token}`;
+  headers['Authorization'] = `Bearer ${token}`;
 };
 
 /*
