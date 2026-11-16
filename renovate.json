@@ -15,7 +15,7 @@
       "matchPackageNames": ["*"],
       "automerge": true,
       "automergeType": "pr",
-      "automergeStrategy": "squash",
+      "automergeStrategy": "merge-commit",
       "ignoreTests": false
     }
   ]
