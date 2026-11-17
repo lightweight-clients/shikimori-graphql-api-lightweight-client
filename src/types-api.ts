@@ -1,4 +1,6 @@
 ﻿// noinspection JSUnusedGlobalSymbols
+/* eslint-disable  @typescript-eslint/no-explicit-any */
+
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = {
@@ -313,8 +315,6 @@ export enum ExternalLinkKindEnum {
   AnimeNewsNetwork = 'anime_news_network',
   /** MyAnimeList */
   Myanimelist = 'myanimelist',
-  /** Amediateka */
-  Amediateka = 'amediateka',
   /** AniDB */
   AnimeDb = 'anime_db',
   /** World Art */
@@ -327,6 +327,10 @@ export enum ExternalLinkKindEnum {
   Twitter = 'twitter',
   /** Anime 365 */
   SmotretAnime = 'smotret_anime',
+  /** Shikimori */
+  Shiki = 'shiki',
+  /** Amediateka */
+  Amediateka = 'amediateka',
   /** Crunchyroll */
   Crunchyroll = 'crunchyroll',
   /** Amazon */
@@ -337,6 +341,8 @@ export enum ExternalLinkKindEnum {
   Hulu = 'hulu',
   /** Ivi */
   Ivi = 'ivi',
+  /** DEEP */
+  Deep = 'deep',
   /** KinoPoisk HD */
   KinopoiskHd = 'kinopoisk_hd',
   /** Wink */
@@ -347,14 +353,16 @@ export enum ExternalLinkKindEnum {
   Okko = 'okko',
   /** Youtube */
   Youtube = 'youtube',
-  /** ReadManga */
-  Readmanga = 'readmanga',
-  /** MangaLib */
-  Mangalib = 'mangalib',
   /** ReManga */
   Remanga = 'remanga',
+  /** Senkuro */
+  Senkuro = 'senkuro',
+  /** MangaLib */
+  Mangalib = 'mangalib',
   /** Baka-Updates */
   Mangaupdates = 'mangaupdates',
+  /** ReadManga */
+  Readmanga = 'readmanga',
   /** MangaDex */
   Mangadex = 'mangadex',
   /** MangaFox */
@@ -513,6 +521,10 @@ export enum OrderEnum {
   CreatedAt = 'created_at',
   /** created_at_desc */
   CreatedAtDesc = 'created_at_desc',
+  /** By field updated_at on entity */
+  UpdatedAt = 'updated_at',
+  /** updated_at_desc */
+  UpdatedAtDesc = 'updated_at_desc',
 }
 
 export type Person = {
@@ -605,7 +617,7 @@ export type QueryAnimesArgs = {
 export type QueryCharactersArgs = {
   page?: InputMaybe<Scalars['PositiveInt']['input']>;
   limit?: InputMaybe<Scalars['PositiveInt']['input']>;
-  ids?: InputMaybe<Array<Scalars['ID']['input']>>;
+  ids?: InputMaybe<Scalars['String']['input']>;
   search?: InputMaybe<Scalars['String']['input']>;
 };
 
